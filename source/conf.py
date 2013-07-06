@@ -257,3 +257,9 @@ pdf_documents = [
 pdf_stylesheets = ['sphinx', 'kerning', 'a4', 'ja']
 pdf_font_path = ['C:\Windows\Fonts']
 pdf_language = "ja"
+
+# •\†‚ğo—Í‚µ‚È‚¢
+pdf_use_coverpage = False
+
+# –ÚŸ‚ğo—Í‚µ‚È‚¢
+pdf_use_toc = False
