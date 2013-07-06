@@ -1,22 +1,59 @@
-.. Gradle CheatSheet documentation master file, created by
-   sphinx-quickstart on Sat Jul 06 21:36:32 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+=========================
+Gradle Cheat Sheet
+=========================
 
-Welcome to Gradle CheatSheet's documentation!
-=============================================
+Layout
+=========================
 
-Contents:
+.. literalinclude:: layout.gradle
+   :language: groovy
+   :linenos:
 
-.. toctree::
-   :maxdepth: 2
+Task
+=========================
+
+TBD
+
+Properties
+=========================
+
+TBD
+
+Artifacts
+=========================
+
+TBD
+
+War
+=========================
+
+TBD
+
+Ear
+=========================
+
+TBD
+
+Multi Projects
+=========================
+
+TBD
+
+Idioms
+=========================
+
+- copy
+ - rename
+ - filter
+- zip
 
 
+Command Line Options
+=========================
 
-Indices and tables
-==================
+TBD
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Wrapper
+=========================
 
+TBD

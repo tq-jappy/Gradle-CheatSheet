@@ -1,0 +1,32 @@
+// plugins
+apply plugin: "aaa"
+
+// global 
+group = "aaa"
+version = "aaa"
+
+// repositories
+repositories {
+  mavenCentral()
+  mavenLocal()
+  maven {
+    url "http://repository1/"
+  }
+}
+
+// configurations
+configurations {
+  foo
+}
+
+
+// dependencies
+dependencies {{
+  compile 'aaa:bbb:1.0.0.'
+  runtime 'aaa:bbb:1.0.0'
+  testCompile 'aaa:bbb:1.0.0'
+  testRuntime 'aaa:bbb:1.0.0'
+  foo 'aaa:bbb:1.0.0.0'
+}
+
+// tasks
