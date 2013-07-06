@@ -1,11 +1,20 @@
 apply plugin: "java"
 apply plugin: "maven"
 
-groupId = 'com.github.tq-jappy'
-version = '0.0.1'
+ext {
+    groupId = 'com.github.tq-jappy'
+}
 
 repositories {
     mavenLocal()
+}
+
+task makePdf(type: Exec) {
+    // classifier = 'pdf'
+
+    commandLine 'make.bat', 'pdf' // TODO: works Windows only.
+    inputs.dir 'source'
+    outputs.file 'build/pdf/gradlecheatsheet.pdf'
 }
 
 task makeHtml(type: Exec) {
@@ -16,19 +25,25 @@ task makeHtml(type: Exec) {
 
 task archiveHtml(type: Zip, dependsOn: 'makeHtml') {
     baseName = 'guide'
+    // classifier = 'html'
 
     from 'build/html'
 }
 
 artifacts {
     archives archiveHtml
+    archives(file('build/pdf/gradlecheatsheet.pdf')) {
+        name 'gradle-cheatsheet'
+        type 'pdf'
+        builtBy makePdf
+    }
 }
 
 install {
     repositories {
         mavenInstaller {
             pom.groupId = groupId
-            pom.version = version
+            pom.version = '0.0.1'
             pom.artifactId = 'gradle-cheatsheet'
         }
     }
