@@ -6,7 +6,11 @@ build.gradle のテンプレート
   // plugins
   apply plugin: "java"
   apply plugin: "maven"
+  apply plugin: "groovy"
   apply plugin: "application"
+
+  // default tasks
+  defaultTasks 'clean', 'build'
 
   // properties
   sourceCompatibility = '1.7'
@@ -34,13 +38,16 @@ build.gradle のテンプレート
 
   // dependencies
   dependencies {
-    // 'groupId:module:version'
-    compile 'g:m:v'
+    compile 'org.codehaus.groovy:groovy-all:2.0.5'
     // runtime
-    // providedCompile
     testCompile 'junit:junit:4.11'
     // testRuntime
+
+    // extra configuration
     doc 'g:m:v@zip' // @ext
+
+    // providedCompile(War plugin)
+    // providedRuntime(War plugin)
   }
 
   // tasks

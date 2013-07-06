@@ -1,13 +1,22 @@
 タスクの定義
 =========================
 
+基本的な作り方
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. sourcecode:: groovy
 
    task hello << {
      println "hello!"
    }
 
+   // 拡張タスクプロパティ
+   task myTask {
+     ext.myProperty = "myValue"
+   }
+
 タスク型Task typeを使う場合
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. sourcecode:: groovy
 
@@ -16,9 +25,19 @@
      // "build/distributions/xxx.zip"
    }
 
-代表的なタスク型Type
+Task typeはCopy, Zip, Tar, JavaDocあたりが頻出。
 
-- Copy
-- JavaDoc
-- Zip
-- Tar
+その他
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. sourcecode:: groovy
+
+   // 依存関係をつける
+   task taskX(dependsOn: 'taskY') << {
+     println 'taskX'
+   }
+
+   // 置き換え
+   task taskZ(overwrite: true) << {
+     println 'taskZ'
+   }

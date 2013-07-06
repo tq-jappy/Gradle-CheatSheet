@@ -2,6 +2,7 @@ Wrapper
 =========================
 
 before 1.6
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. sourcecode:: groovy
 
@@ -9,7 +10,10 @@ before 1.6
      gradleVersion = '1.6'
    }
 
+:command:`gradlew` で実行。
+
 1.7 or later
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. sourcecode:: groovy
 
@@ -17,4 +21,4 @@ before 1.6
      gradleVersion '1.6'
    }
 
-run :command:`gradle wrapper`
+:command:`gradle wrapper` で実行できるようになる（らしい）。。

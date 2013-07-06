@@ -7,16 +7,16 @@ copy
 .. sourcecode:: groovy
 
    // 方法1: Copyタスクを使う場合
-   task myCopy2(type: Copy) << {
+   task myCopy(type: Copy) << {
      from 'src/*.txt'
      into 'dest'
    }
 
    // 方法2: Project.copy() メソッドを使う場合
-   task myCopy << {
+   task myCopy2 << {
      copy {
        from 'src/*.txt'
-       into 'dest'
+       into buildDir
      }
    }
 
@@ -30,8 +30,8 @@ unzip
 
    task myUnzip << {
      copy {
-       from files('archive.zip').collect { file -> zipTree(file) }
-       into 'dest'
+       from zipTree('aaa.zip')
+       into buildDir
      }
    }
 

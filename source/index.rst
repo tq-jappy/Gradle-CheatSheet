@@ -7,10 +7,12 @@ Gradle Cheat Sheet
 
    project_layout
    template
+   command_options
    tasks
    configure_task
    properties
    references
+   files
    new_task
    artifact
    jar
@@ -19,6 +21,5 @@ Gradle Cheat Sheet
    multi_project
    code_analysis
    dependencies
-   command_options
    wrapper
    settings

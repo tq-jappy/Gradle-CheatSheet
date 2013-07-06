@@ -3,6 +3,7 @@
 
 .. sourcecode:: groovy
 
+  // 個別に
   fooTask {
     fooTaskProperty = "xxx"
     fooMethod "yyy"
