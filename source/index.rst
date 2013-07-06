@@ -74,6 +74,7 @@ Gradleを使うようなケースでは、最低でもjavaプラグインは使�
 
 .. csv-table::
    :header: "プラグイン", "タスク名", "説明"
+   :class: "table3"
 
    "java", "compileJava", "sourceSets.main.java.srcDirs(デフォルトは[src/main/java])にあるJavaソースコードをコンパイル"
    "java", "jar", "JARファイルを作成"
@@ -333,7 +334,8 @@ build.xml
   apply plugin: "checkstyle"
   apply plugin: "findbugs"
   buildscript {
-    apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/gradle_cobertura/gradle_cobertura/1.2.1/coberturainit.gradle'
+    apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/'
+                + 'gradle_cobertura/gradle_cobertura/1.2.1/coberturainit.gradle'
   }
 
   test.jvmArgs '-XX:-UseSplitVerifier'
