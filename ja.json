@@ -123,6 +123,28 @@
                 [ "LINEBELOW", [0, 0], [-1, -2], 0.2, "#E1E6EA" ]
             ]
         }],
+        ["table2" , {
+            "spaceBefore":0,
+            "spaceAfter":3,
+            "colWidths": ["40%", "60%"],
+            "commands": [
+                [ "VALIGN", [0, 0], [-1, -1], "TOP" ],
+                [ "BOTTOMPADDING", [0, 0], [-1, -1], 0 ],
+                [ "TOPPADDING", [0, 0], [-1, -1], 1 ],
+                [ "LINEBELOW", [0, 0], [-1, -2], 0.2, "#E1E6EA" ]
+            ]
+        }],
+        ["table4" , {
+            "spaceBefore":0,
+            "spaceAfter":3,
+            "colWidths": ["15%", "20%", "15%", "50%"],
+            "commands": [
+                [ "VALIGN", [0, 0], [-1, -1], "TOP" ],
+                [ "BOTTOMPADDING", [0, 0], [-1, -1], 0 ],
+                [ "TOPPADDING", [0, 0], [-1, -1], 1 ],
+                [ "LINEBELOW", [0, 0], [-1, -2], 0.2, "#E1E6EA" ]
+            ]
+        }],
         ["exampletable1" , {
             "spaceBefore":0,
             "spaceAfter":3,

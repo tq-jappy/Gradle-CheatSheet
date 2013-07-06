@@ -2,7 +2,24 @@
 Gradle Cheat Sheet
 =========================
 
-build.gradle
+Javaプロジェクトの標準レイアウト
+=========================
+
+::
+
+  + project
+    + src
+      + main
+        + java
+        + resources
+      + test
+        + java
+        + resources
+    - build.gradle
+    - gradle.properties
+    - settings.gradle
+
+build.gradle のテンプレート
 =========================
 
 .. sourcecode:: groovy
@@ -44,7 +61,7 @@ build.gradle
     // providedCompile
     testCompile 'junit:junit:4.11'
     // testRuntime
-    doc 'aaa:bbb:1.0.0@zip'
+    doc 'g:m:v@zip' // @ext
   }
 
   // tasks
@@ -52,28 +69,66 @@ build.gradle
 よく使うタスク
 =========================
 
+プラグインを使うことでプラグインに応じてタスクが追加される。
+Gradleを使うようなケースでは、最低でもjavaプラグインは使うはず。
+
 .. csv-table::
    :header: "プラグイン", "タスク名", "説明"
 
-   "?", "clean", "ビルド時に作ったファイルを削除"
    "java", "compileJava", "sourceSets.main.java.srcDirs(デフォルトは[src/main/java])にあるJavaソースコードをコンパイル"
    "java", "jar", "JARファイルを作成"
    "java", "test", "sourceSets.test.java.srcDirs(デフォルトは[src/test/java])にあるJavaソースコードをテスト"
-   "java", "check", "検証タスクを実行する(testタスクに依存)"
+   "java", "check", "検証タスクを実行する。testタスクに依存。"
+   "java", "javadoc", "JavaDocを生成"
    "java", "build", "すべてのアーカイブ作成、テスト実行、検証タスクを実行"
+   "java", "clean", "プロジェクトのビルドディレクトリを削除"
    "war", "war", "WARファイルを作成"
    "ear", "ear", "EARファイルを作成"
-   "?", "install", "アーティファクトをリポジトリに登録する"
+   "java & maven", "install", "アーティファクトをリポジトリに登録する"
 
+まったくプラグインを使っていない場合でも、以下のようなヘルプタスクが使える（他にもある）。
+
+.. csv-table::
+   :header: "タスク名", "説明"
+   :class: "table2"
+
+   "tasks", "タスク一覧を出力"
+   "dependencies", "依存関係一覧を出力"
+   "projects", "サブプロジェクト一覧を出力（マルチプロジェクトを使っている場合に使う）"
+   "properties", "プロパティ一覧を出力"
+
+タスクプロパティによるタスクのカスタマイズ
+=========================
+
+.. sourcecode:: groovy
+
+  fooTask {
+    fooTaskProperty = "xxx"
+    fooMethod "yyy"
+  }
+
+  // まとめて
+  [barTask, bazTask]*.barbazProperty = "zzz"
+
+タスクにどのようなプロパティがあるかを調べるには、そのタスクのTask Typeを辿ればよい。
+
+例1: javaプラグインで追加されるcleanタスクのTask TypeはDelete。
+
+例2: warプラグインで追加されるwarタスクのTask TypeはWar。
 
 よく使うプロパティ
 =========================
 
 .. csv-table::
-   :header: "プラグイン", "プロパティ名", "説明"
+   :header: "プラグイン", "プロパティ名", "型", "説明"
+   :class: "table4"
 
-   "java", "sourceCompatibility", "コンパイル時に使用するJavaのバージョン(1.7など)"
-   "war", "from",
+   "標準", "rootProject", "Project", "ルートプロジェクト"
+   "標準", "rootDir", "File", "プロジェクトのルートディレクトリ"
+   "標準", "buildDir", "File", "ビルドディレクトリ"
+   "java", "sourceSets", "SourceSetContainer", "ソースセット（デフォルトでmainとjava）"
+   "java", "sourceCompatibility", "JavaVersion", "コンパイル時に使用するJavaのバージョン(1.7など)"
+   "java", "manifest", "Manifest", "マニフェスト"
 
 よく使う処理
 =========================
@@ -271,6 +326,8 @@ Ear
 静的解析
 =========================
 
+build.xml
+
 .. sourcecode:: groovy
 
   apply plugin: "checkstyle"
@@ -280,10 +337,22 @@ Ear
   }
 
   test.jvmArgs '-XX:-UseSplitVerifier'
-  [checkstyleMain, checkstyleTest, findbugsMain, findBugsTest]*.ignoreFailures = true
-  [checkstyleTest, findBugsTest]*.excludes = ['**/*']
+  [checkstyleMain, checkstyleTest, findbugsMain, findbugsTest]*.ignoreFailures = true
+  [checkstyleTest, findbugsTest]*.excludes = ['**/*']
+  // checkStyleMain {
+  //   configFile = file('config/checkstyle/checkstyle.xml')
+  // }
+
+タスク
+
+- check
+- coberturaMain
 
 レポート
+
+- :file:`build/reports/checkstyle/main.xml`
+- :file:`build/reports/findbugs/main.xml`
+- :file:`build/reports/cobertura/coverage.xml`
 
 依存関係の管理
 =========================
