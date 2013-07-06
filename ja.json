@@ -35,6 +35,7 @@
     },
     "styles" : [
         ["base", {
+            "wordWrap": "CJK",
             "kerning" : true,
             "fontSize": 6,
             "leading": 7.5,
@@ -60,16 +61,16 @@
             "fontSize": 6
         }],
         ["heading1", {
-            "backColor": "#446885",
-            "borderColor": "#446885",
+            "backColor": "#448568",
+            "borderColor": "#244865",
             "borderWidth": 0.2,
             "textColor": "#FFFFFF",
-            "leading": 10,
+            "leading": 12,
             "alignment": "TA_CENTER",
             "spaceBefore": 4,
             "borderPadding": [3,0,1,0],
             "leftIndent": 0,
-            "fontSize": 8,
+            "fontSize": 12,
             "fontName": "stdSansBold"
         }],
         ["heading2", {
@@ -102,7 +103,7 @@
         ["table" , {
             "spaceBefore":0,
             "spaceAfter":3,
-            "colWidths": ["50%","50%"],
+            "colWidths": ["25%","25%", "50%"],
             "commands": [
                 [ "VALIGN", [0, 0], [-1, -1], "TOP" ],
                 [ "BOTTOMPADDING", [0, 0], [-1, -1], 0 ],
@@ -119,6 +120,15 @@
                 [ "BOTTOMPADDING", [0, 0], [-1, -1], -1 ],
                 [ "GRID", [0, 0], [-1, -1], 0.2, "#446885" ],
                 [ "BOX", [0, 0], [-1, -1], 0.2, "#446885" ]
+            ]
+        }],
+        ["exampletable2" , {
+            "spaceBefore":0,
+            "spaceAfter":3,
+            "colWidths": ["40%", "60%"],
+            "commands": [
+                [ "VALIGN", [0, 0], [-1, -1], "TOP" ],
+                [ "BOTTOMPADDING", [0, 0], [-1, -1], -1 ]
             ]
         }],
         ["faketrans" , {
