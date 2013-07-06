@@ -1,0 +1,20 @@
+{
+  "fontsAlias" : {
+     "stdFont": "meiryo",
+     "stdBold": "meiryob",
+     "stdItalic": "meiryo",
+     "stdBoldItalic": "meiryo",
+     "stdMono": "MS Gothic",
+     "stdMonoBold": "MS Gothic",
+     "stdMonoItalic": "MS Gothic",
+     "stdMonoBoldItalic": "MS Gothic"
+},
+"styles" : [
+  ["base", {
+   "wordWrap": "CJK"
+  }],
+  ["literal", {
+   "wordWrap": "None"
+  }]
+ ]
+}

@@ -37,6 +37,7 @@ if "%1" == "help" (
 	echo.  pseudoxml  to make pseudoxml-XML files for display purposes
 	echo.  linkcheck  to check all external links for integrity
 	echo.  doctest    to run all doctests embedded in the documentation if enabled
+	echo.  pdf        to make a PDF file
 	goto end
 )
 
@@ -236,6 +237,14 @@ if "%1" == "pseudoxml" (
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The pseudo-XML files are in %BUILDDIR%/pseudoxml.
+	goto end
+)
+
+if "%1" == "pdf" (
+	%SPHINXBUILD% -b pdf %ALLSPHINXOPTS% %BUILDDIR%/pdf
+	if errorlevel 1 exit /b 1
+	echo.
+	echo.Build finished. The pdf files are in %BUILDDIR%/pdf.
 	goto end
 )
 

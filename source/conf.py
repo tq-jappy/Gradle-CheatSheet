@@ -246,3 +246,14 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# -- Options for PDF output --------------------------------------------------
+
+extensions += ['sphinx.ext.autodoc', 'rst2pdf.pdfbuilder']
+
+pdf_documents = [
+    ('index', 'gradlecheatsheet', u'Gradle CheatSheet Documentation', u'Takumi Endo'),
+    ]
+pdf_stylesheets = ['sphinx', 'kerning', 'a4', 'ja']
+pdf_font_path = ['C:\Windows\Fonts']
+pdf_language = "ja"
