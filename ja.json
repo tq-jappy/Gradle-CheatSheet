@@ -86,6 +86,15 @@
             "fontSize": 8,
             "fontName": "stdSansBold"
         }],
+        ["heading3", {
+            "borderWidth": 0.2,
+            "leading": 10,
+            "spaceBefore": 4,
+            "borderPadding": [3,0,1,0],
+            "leftIndent": 0,
+            "fontSize": 8,
+            "fontName": "stdSansBold"
+        }],
         ["faketitle" , {
             "borderPadding": [3,0,1,0],
             "fontSize": 8,
@@ -100,10 +109,13 @@
             "textColor": "#FFFFFF",
             "alignment": "TA_RIGHT"
         }],
+        ["table-heading" , {
+            "fontSize": 8
+        }],
         ["table" , {
             "spaceBefore":0,
             "spaceAfter":3,
-            "colWidths": ["25%","25%", "50%"],
+            "colWidths": ["15%","25%", "60%"],
             "commands": [
                 [ "VALIGN", [0, 0], [-1, -1], "TOP" ],
                 [ "BOTTOMPADDING", [0, 0], [-1, -1], 0 ],
