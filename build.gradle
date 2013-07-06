@@ -1,0 +1,35 @@
+apply plugin: "java"
+apply plugin: "maven"
+
+groupId = 'com.github.tq-jappy'
+version = '0.0.1'
+
+repositories {
+    mavenLocal()
+}
+
+task makeHtml(type: Exec) {
+    commandLine 'make.bat', 'html' // TODO: works Windows only.
+    inputs.dir 'source'
+    outputs.dir 'build/html'
+}
+
+task archiveHtml(type: Zip, dependsOn: 'makeHtml') {
+    baseName = 'guide'
+
+    from 'build/html'
+}
+
+artifacts {
+    archives archiveHtml
+}
+
+install {
+    repositories {
+        mavenInstaller {
+            pom.groupId = groupId
+            pom.version = version
+            pom.artifactId = 'gradle-cheatsheet'
+        }
+    }
+}
