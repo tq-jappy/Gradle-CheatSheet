@@ -11,7 +11,7 @@ IPAフォント( http://ipafont.ipa.go.jp/ )を利用しています。
 
 PDFの生成は設定が手間だったり、OSの制約があるので、実際のPDFは以下からダウンロードできます：
 
-https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet-0.0.1.pdf
+https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet.pdf
 
 ## 免責事項
 
