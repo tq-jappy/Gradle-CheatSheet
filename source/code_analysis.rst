@@ -1,7 +1,7 @@
 静的解析
 =========================
 
-build.xml
+build.gradle
 
 .. sourcecode:: groovy
 
