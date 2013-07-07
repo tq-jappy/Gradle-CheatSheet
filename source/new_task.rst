@@ -33,11 +33,7 @@ Task typeはCopy, Zip, Tar, JavaDocあたりが頻出。
 .. sourcecode:: groovy
 
    // 依存関係をつける
-   task taskX(dependsOn: 'taskY') << {
-     println 'taskX'
-   }
+   task taskX(dependsOn: 'taskY') << { println 'taskX' }
 
    // 置き換え
-   task taskZ(overwrite: true) << {
-     println 'taskZ'
-   }
+   task taskZ(overwrite: true) << { println 'taskZ' }

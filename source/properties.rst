@@ -8,6 +8,8 @@
    "標準", "rootProject", "Project", "ルートプロジェクト"
    "標準", "rootDir", "File", "プロジェクトのルートディレクトリ"
    "標準", "buildDir", "File", "ビルドディレクトリ"
+   "標準", "inputs", "TaskInputs", "タスクの入力物。未更新タスクスキップ(UP-TO-DATE)用"
+   "標準", "outputs", "TaskOutputs", "タスクの出力物。未更新タスクスキップ(UP-TO-DATE)用"
    "java", "sourceSets", "SourceSetContainer", "ソースセット（デフォルトでmainとjava）"
    "java", "sourceCompatibility", "JavaVersion", "コンパイル時に使用するJavaのバージョン(1.7など)"
    "java", "manifest", "Manifest", "マニフェスト"
@@ -17,7 +19,7 @@
 
 .. sourcecode:: groovy
 
-   // 全体
+   // Project
    ext {
      springVersion = "3.1.0.RELEASE"
      emailNotification = "build@master.org"

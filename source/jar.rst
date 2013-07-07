@@ -14,10 +14,6 @@
            attributes 'Class-Path': manifestClasspath
        }
        from (configurations.compile.resolve().collect { it.isDirectory() ? it : fileTree(it) }) {
-           exclude 'META-INF/MANIFEST.MF'
-           exclude 'META-INF/*.SF'
-           exclude 'META-INF/*.DSA'
-           exclude 'META-INF/*.RSA'
            exclude '**/*.jar'
        }
        destinationDir = file("build/distribution")

@@ -25,10 +25,10 @@ build.gradle のテンプレート
   repositories {
     mavenCentral()
     mavenLocal()
-    maven {
-      url "http://maven.seasar.org/maven2"
-      url "http://repository.jboss.org/nexus/content/groups/public-jboss/"
-    }
+    maven { url "http://maven.seasar.org/maven2" }
+    maven { url "http://repository.jboss.org/nexus/content/groups/public-jboss/" }
+    maven { url "http://repository.apache.org/content/groups/public" }
+    maven { url "http://download.java.net/maven/glassfish" }
   }
 
   // configurations
@@ -54,6 +54,8 @@ build.gradle のテンプレート
 
 大元であるProjectのプロパティやメソッドが呼ばれる。
 例えばプラグインを適用するapplyはProject.apply()の呼び出し。
+sourceCompatibilityのようにプラグイン(javaプラグイン)を適用することで
+追加されるプロパティもある。
 
 build.gradle の分割
 ~~~~~~~~~~~~~~~~~~~~~~~~~

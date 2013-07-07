@@ -1,4 +1,10 @@
 {
+    "embeddedFonts" : [[
+        "VL-Gothic-Regular.ttf",
+        "VL-PGothic-Regular.ttf",
+        "ipag.ttf",
+        "ipagp.ttf"
+    ]],
     "fontsAlias": {
         "stdBold": "VL-PGothic-Regular",
         "stdBoldItalic": "VL-PGothic-Regular",
@@ -228,12 +234,23 @@
             ]
         }],
         ["warning", {
+            "allowOrphans": false,
+            "allowWidows": false,
             "spaceBefore":5,
             "spaceAfter":5,
             "borderPadding": [4, 4, 4, 4],
             "commands": [
                 [ "VALIGN", [0, 0], [-1, -1], "MIDDLE" ]
             ]
+        }],
+        ["code", {
+            "allowOrphans": false,
+            "allowWidows": false,
+            "backColor": "#FFFFDD",
+            "borderColor": "#AAAACC",
+            "borderPadding": [4, 0, 0, 4],
+            "borderWidth": 0.3,
+            "spaceBefore": 0
         }]
     ]
 }

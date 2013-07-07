@@ -1,29 +1,18 @@
 マルチプロジェクト
 =========================
 
-階層
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  + parent
-    + sub1
-    + sub2
-    + sub3
-
 ルートプロジェクトの :file:`parent/build.gradle`
 
 .. sourcecode:: groovy
 
-   allprojects {
-     task hello << {task -> println "I'm $task.project.name" }
-   }
-   subprojects {
-     hello << {println "- I depend on water"}
-   }
-   project(':sub1').hello << {
-     println "- I'm the largest animal that has ever lived on this planet."
-   }
+   allprojects { task hello << {task -> println "root and all sub projects" } }
+
+   subprojects { hello << {println "all sub projects" } }
+
+   project(':sub1').hello << { println "one sub project" }
+
+階層
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ルートプロジェクトの :file:`parent/settings.gradle`
 
@@ -48,13 +37,6 @@
 
 フラット
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  + parent
-  + sub1
-  + sub2
-  + sub3
 
 ルートプロジェクトの :file:`parent/settings.gradle`
 

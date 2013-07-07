@@ -10,6 +10,9 @@ copy
    task myCopy(type: Copy) << {
      from 'src/*.txt'
      into 'dest'
+     // include '**/*.html'
+     // exclude '**/*.jsp'
+     // rename { String fileName -> fileName.replace('-staging-', '') }
    }
 
    // 方法2: Project.copy() メソッドを使う場合
