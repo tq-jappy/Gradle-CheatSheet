@@ -51,3 +51,13 @@ build.gradle のテンプレート
   }
 
   // tasks
+
+大元であるProjectのプロパティやメソッドが呼ばれる。
+例えばプラグインを適用するapplyはProject.apply()の呼び出し。
+
+build.gradle の分割
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. sourcecode:: groovy
+
+  apply from: "gradle/foo.gradle"

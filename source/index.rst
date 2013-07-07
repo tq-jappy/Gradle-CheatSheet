@@ -21,5 +21,6 @@ Gradle Cheat Sheet
    multi_project
    code_analysis
    dependencies
+   ant
    wrapper
    settings

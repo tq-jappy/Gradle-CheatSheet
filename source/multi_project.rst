@@ -44,7 +44,7 @@
 
 ::
 
-　　:sub1:build
+  :sub1:build
 
 フラット
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,4 +60,4 @@
 
 .. sourcecode:: groovy
 
-   include "../sub1", "../sub2", "../sub3"
+   includeFlat 'sub1', 'sub2', 'sub3'

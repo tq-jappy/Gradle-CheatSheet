@@ -23,6 +23,15 @@ copy
 単なるコピーだけならCopyタスクの方がよい。
 Project.copy() メソッドは他のタスクの中に組み込んで使うことが多い。
 
+mkdir
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. sourcecode:: groovy
+
+   task myMkdir << {
+     file('tmp').mkdir()
+   }
+
 unzip
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -35,12 +44,6 @@ unzip
      }
    }
 
-rename
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-filter
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
 tar
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -49,6 +52,8 @@ tar
    task myTar(type: Tar) {
      compression = Compression.GZIP // NONE/GZIP/BZIP2
      from 'content'
+
+     destinationDir = file('dest') // default: project.distsDir = "build/distributions"
    }
 
 外部コマンド実行

@@ -3,6 +3,8 @@ Ear
 
 .. sourcecode:: groovy
 
+   apply plugin: "ear"
+
    dependencies {
      deploy project(':war')
 

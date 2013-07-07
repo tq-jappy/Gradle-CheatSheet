@@ -3,6 +3,8 @@ War
 
 .. sourcecode:: groovy
 
+   apply plugin: "war"
+
    configurations {
      moreLibs
    }

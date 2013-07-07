@@ -1,9 +1,7 @@
 よく使うタスク
 =========================
 
-プラグインを使うことでプラグインに応じてタスクが追加される。
-
-とはいえ、まったくプラグインを使っていない場合でも、以下のようなヘルプタスクが使える（他にもある）。
+まったくプラグインを適用していない場合でも使えるヘルプタスク
 
 .. csv-table::
    :header: "タスク名", "説明"
@@ -14,17 +12,16 @@
    "projects", "サブプロジェクト一覧を出力（マルチプロジェクトを使っている場合に使う）"
    "properties", "プロパティ一覧を出力"
 
-Gradleを使うようなケースでは、最低でもjavaプラグインは使うはず。
+プラグインを適用して使えるようになるタスク
 
 .. csv-table::
    :header: "プラグイン", "タスク名", "説明"
    :class: "table3"
 
-   "java", "compileJava", "sourceSets.main.java.srcDirs(デフォルトは[src/main/java])にあるJavaソースコードをコンパイル"
    "java", "jar", "JARファイルを作成"
    "java", "assemble", "JAR（やWARやEAR）を作成"
-   "java", "test", "sourceSets.test.java.srcDirs(デフォルトは[src/test/java])にあるJavaソースコードをテスト。groovy"
-   "java", "check", "テストし、検証タスクを実行する。testタスクに依存。"
+   "java", "test", "ソースコードをテスト"
+   "java", "check", "テストし、検証タスクを実行する。testタスクに依存"
    "java", "javadoc", "JavaDocを生成"
    "java", "build", "すべてのアーカイブ作成、テスト実行、検証タスクを実行"
    "java", "clean", "プロジェクトのビルドディレクトリを削除"

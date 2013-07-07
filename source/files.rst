@@ -25,10 +25,4 @@
    # Create a file tree using a map
    tree = fileTree(dir: 'src', include: '**/*.java')
 
-FileCollection型のプロパティ
-
-- sourceSets.main.compileClasspath
-- sourceSets.main.runtimeClasspath
-
-Gradleではファイルの集まりを指定するのに、パス文字列、File, FileCollection, Closureなど
-どれでも利用できるケースが多い（コピー元ファイル、ファイル依存関係など）
+ファイルコレクションは、コピー元ファイル、ファイル依存関係などの指定で使われる。
