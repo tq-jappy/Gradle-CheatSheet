@@ -6,6 +6,8 @@ Gradleのチートシートです。個人的に欲しいと思っていたの�
 フィードバック大歓迎です。
 
 チートシートは Sphinx で作られており、HTMLやPDFに生成することができます。
+PDFの生成の際、はVLゴシックフォント( http://vlgothic.dicey.org/ )と
+IPAフォント( http://ipafont.ipa.go.jp/ )を利用しています。
 
 PDFの生成は設定が手間だったり、OSの制約があるので、実際のPDFは以下からダウンロードできます：
 
