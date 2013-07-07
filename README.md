@@ -7,6 +7,10 @@ Gradleのチートシートです。個人的に欲しいと思っていたの�
 
 チートシートは Sphinx で作られており、HTMLやPDFに生成することができます。
 
+PDFの生成は設定が手間だったり、OSの制約があるので、実際のPDFは以下からダウンロードできます：
+
+https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet-0.0.1.pdf
+
 ## 免責事項
 
 内容の確認はGradle1.6で行なっています。
