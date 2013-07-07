@@ -14,7 +14,11 @@ task makePdf(type: Exec) {
 
     commandLine 'make.bat', 'pdf' // TODO: works Windows only.
     inputs.dir 'source'
-    outputs.file 'build/pdf/gradlecheatsheet.pdf'
+    outputs.file 'gradle-cheatsheet.pdf'
+
+    doLast {
+        file('build/pdf/gradlecheatsheet.pdf').renameTo('gradle-cheatsheet.pdf')
+    }
 }
 
 task makeHtml(type: Exec) {

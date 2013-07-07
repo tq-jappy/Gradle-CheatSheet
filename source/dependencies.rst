@@ -20,16 +20,15 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 dependencies に記述した依存するサードパーティのアーティファクト（依存モジュール）は
-${GRADLE_USER_HOME} > ${USER_HOME}/.gradle/cache 以下にキャッシュされる。
-Mavenキャッシュと管理方法が異なるので、そのまま Maven リポジトリとして公開はできない、
+以下の優先順位でキャッシュされる。
 
+1. ${GRADLE_USER_HOME}/cache
+2. ${USER_HOME}/.gradle/cache
+
+Mavenキャッシュと管理方法が異なるので、そのまま Maven リポジトリとして公開はできない、
 
 .. warning::
 
   Jenkins Gradle Plugin 1.22 では GRADLE_USER_HOME は Jenkins の
-  ワークスペース(例えば :file:`/var/lib/jenkins/workspace/job1`)がセットされる。
-
-  Workspace Cleanup Plugin などを使ってビルド前にワークスペースをクリーンしていると、
-  毎回ローカルキャッシュも削除されてしまい、ビルドの度に
-  ライブラリを毎回ダウンロードすることになってしまうので注意（最新の1.23では解消されており、
-  :file:`/var/lib/jenkins/workspace/.gradle` にキャッシュされる）
+  ワークスペースがセットされるため、カスタムワークスペースを使ってワークスペースを共有しない限り、
+  ジョブ間でキャッシュを共有できないので、1.23を使うのがよい。

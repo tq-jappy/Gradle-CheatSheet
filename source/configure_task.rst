@@ -1,16 +1,26 @@
-タスクプロパティによるタスクのカスタマイズ
+タスクのカスタマイズ
 =========================
 
 .. sourcecode:: groovy
 
-  // 個別に
+  // プロパティ: 個別に
   fooTask {
     fooTaskProperty = "xxx"
     fooMethod "yyy"
   }
 
-  // まとめて
+  // プロパティ: まとめて
   [barTask, bazTask]*.barbazProperty = "zzz"
+
+  // Gradle 起動時
+  fooTask { }
+
+  // タスクの最初に実行
+  aTask.doFirst { }
+
+  // タスクの最後に実行
+  aTask.doLast { }
+  aTask << { }
 
 タスクにどのようなプロパティがあるかを調べるには、そのタスクのTask Typeを辿ればよい。
 
