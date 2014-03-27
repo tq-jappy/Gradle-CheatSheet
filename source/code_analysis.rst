@@ -1,4 +1,4 @@
-静的解析(Checkstyle/Findbugs/Cobertura)
+静的解析(Checkstyle/Findbugs/JaCoCo)
 ===========================================================
 
 build.gradle
@@ -7,10 +7,7 @@ build.gradle
 
   apply plugin: "checkstyle"
   apply plugin: "findbugs"
-  buildscript {
-    apply from: 'https://github.com/valkolovos/gradle_cobertura/raw/master/repo/'
-                + 'gradle_cobertura/gradle_cobertura/1.2.1/coberturainit.gradle'
-  }
+  apply plugin: "jacoco"
 
   test.jvmArgs '-XX:-UseSplitVerifier'
   [checkstyleMain, checkstyleTest, findbugsMain, findbugsTest]*.ignoreFailures = true
@@ -18,14 +15,20 @@ build.gradle
   // checkStyleMain {
   //   configFile = file('config/checkstyle/checkstyle.xml')
   // }
+  // jacocoTestReport {
+  //   xml.enabled true
+  //   csv.enable true
+  // }
 
 タスク
 
 - check
-- coberturaMain
+- jacocoTestReport
 
 レポート
 
 - :file:`build/reports/checkstyle/main.xml`
 - :file:`build/reports/findbugs/main.xml`
-- :file:`build/reports/cobertura/coverage.xml`
+- :file:`build/reports/jacoco/test/html/*.html`,
+  :file:`build/reports/jacoco/test/jacocoTestReport.xml`,
+  :file:`build/reports/jacoco/test/jacocoTestReport.csv`
