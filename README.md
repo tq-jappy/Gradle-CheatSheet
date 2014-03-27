@@ -15,7 +15,7 @@ https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet.pdf
 
 ## 免責事項
 
-内容の確認はGradle1.6で行なっています。
+内容の確認はGradle1.11で行なっています。
 それ以外のバージョンではエラーになるかもしれません。
 
 ## ビルド
@@ -79,4 +79,5 @@ gradle install
 ## 変更履歴a
 
 |日付|バージョン|更新内容|
+|----+----+----|
 |2013.07.07|1.0.0|初版作成(Gradle 1.6)|
