@@ -26,9 +26,3 @@ dependencies に記述した依存するサードパーティのアーティフ�
 2. ${USER_HOME}/.gradle/cache
 
 Mavenキャッシュと管理方法が異なるので、そのまま Maven リポジトリとして公開はできない、
-
-.. warning::
-
-  Jenkins Gradle Plugin 1.22 では GRADLE_USER_HOME は Jenkins の
-  ワークスペースがセットされるため、カスタムワークスペースを使ってワークスペースを共有しない限り、
-  ジョブ間でキャッシュを共有できないので、1.23を使うのがよい。
