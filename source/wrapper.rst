@@ -1,12 +1,5 @@
 Wrapper
 =========================
 
-.. sourcecode:: groovy
-
-   task wrapper(type: Wrapper) {
-     gradleVersion = '1.6'
-   }
-
-:command:`gradlew` で実行。
-
-1.7以降はタスクを作る必要がなくなる（予定らしい）
+#. wrapper タスクでラッパーファイルを生成（生成したファイルはバージョン管理する）。
+#. :command:`gradlew` で実行。
