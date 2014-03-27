@@ -251,6 +251,16 @@
             "borderPadding": [4, 0, 0, 4],
             "borderWidth": 0.3,
             "spaceBefore": 0
+        }],
+        ["item-list", {
+              "parent": "bodytext",
+              "spaceBefore": 0,
+              "commands": [
+                    [ "VALIGN", [ 0, 0 ], [ -1, -1 ], "TOP" ],
+                    [ "RIGHTPADDING", [ 0, 0 ], [ 1, -1 ], 0 ]
+                ],
+                "colWidths": ["20pt",null]
+
         }]
     ]
 }
