@@ -34,7 +34,7 @@ https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet.pdf
 ### HTMLを生成する
 
 ```
-gradle makeHtml
+./gradlew makeHtml
 ```
 
 中では以下のSphinxのビルドバッチを実行しているだけなので、そのまま以下のコマンドでも可。
@@ -73,7 +73,7 @@ make pdf
 ZipでアーカイブしたHTMLファイルとPDFをMavenのローカルリポジトリにインストールします。
 
 ```
-gradle install
+./gradlew install
 ```
 
 ## 変更履歴
