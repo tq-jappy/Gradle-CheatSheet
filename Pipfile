@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 sphinx = "*"
 sphinx-autobuild = "*"
+rst2pdf = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+build = "make pdf"

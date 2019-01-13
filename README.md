@@ -18,6 +18,12 @@ https://github.com/tq-jappy/Gradle-CheatSheet/raw/master/gradle-cheatsheet.pdf
 内容の確認はGradle1.11で行なっています。
 それ以外のバージョンではエラーになるかもしれません。
 
+事前に Python, pipenv をインストールし、必要なパッケージをインストールしてください。
+
+```
+$ pipenv install
+```
+
 ## ビルド
 
 このチートシート自体も Gradle でビルドできるようになっています。
